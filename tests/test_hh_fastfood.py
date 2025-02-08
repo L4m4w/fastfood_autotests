@@ -1,6 +1,7 @@
 from selene import browser, be, have, by
 import time
 
+from mixins.config import Config
 
 """
 Открыть сайт ХХ - https://spb.hh.ru/
@@ -11,7 +12,7 @@ import time
 
 """
 def test_find_search_vacancy_via_bot():
-    browser.open('https://spb.hh.ru')
+    browser.open(Config.BASE_URL)
     browser.element(by.xpath('//*[@id="HH-React-Root"]/div/div[3]/div/div/div/div/div[1]/button')).click()
     browser.element(by.xpath("/html/body/div[12]/div/div[2]/div[2]/div[1]/div[4]/div[1]/div[1]/div[3]/div/div/div/div/div/div[2]/div[1]/div/div/div/div")).click()
 
